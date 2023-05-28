@@ -1,36 +1,47 @@
 .button {
+    color: blue;
 }
 
 .disabled {
+    color: darkseagreen;
 }
 
 .secondary {
+    color: #00cc22;
 }
 
 .default {
+    color: darkseagreen;
 }
 
 .red {
+    color:red;
 }
 
 .default:hover {
+    color: blue;
 }
 
 .red:hover {
+    color:red;
 }
 
 .secondary:hover {
+
 }
 
 
 .default:active {
+    color: #cc9c00;
 }
 
 .secondary:active {
+    color: #cc9c00;
 }
 
 .red:active {
 }
 
 .button:disabled {
+    color: darkgrey;
 }

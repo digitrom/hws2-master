@@ -1,20 +1,35 @@
 .input:focus {
+outline: none;
+    border: #0066cc solid 5px;
 }
 
 .input {
+color: #cc9c00;
 }
 
 .inputWrapper {
+color: #0066cc;
 }
 
 .superInput {
+    margin: 10px;
+color: #00cc22;
 }
 
 .errorInput {
+    border: 6px solid red;
 }
 
 .errorInput:focus {
+
 }
 
 .error {
+    color: red;
+    fontWeight: bold;
+
+}
+
+.className {
+    border: 2px solid red;
 }
