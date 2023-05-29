@@ -1,8 +1,15 @@
 .burgerMenuIcon {
+    color: #00cc22;
 }
 
 .header {
+    text-decoration: none;
+    color: red;
 }
 
 .header h1 {
+}
+
+.link {
+
 }

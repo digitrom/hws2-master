@@ -2,23 +2,32 @@
 }
 
 .sidebar.open {
+    color: #212A34;
 }
 
 .background {
 }
 
 .nav {
+    text-decoration: #00cc22;
+    color: #cc9c00;
 }
 
 .nav a {
+color: #8fbc8f;
 }
 
 .nav a:hover {
+    color: #cc0000;
 }
 
 .nav a.active {
+    text-decoration: none;
+    color: #0066cc;
+    margin: 10px;
 }
 .close {
+color: #cc9c00;
 }
 
 .close img {
