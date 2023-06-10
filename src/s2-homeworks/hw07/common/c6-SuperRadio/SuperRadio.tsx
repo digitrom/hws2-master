@@ -15,10 +15,14 @@ type DefaultSpanPropsType = DetailedHTMLProps<
     HTMLAttributes<HTMLSpanElement>,
     HTMLSpanElement
 >
+type ArrType = {
+    id: number
+    value: string
+}
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
+    options?: ArrType[]
+    onChangeOption?: (option: number) => void
     spanProps?: DefaultSpanPropsType // пропсы для спана
 }
 
@@ -40,14 +44,18 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
         // }
         {
             onChange && onChange(e)
-            onChangeOption && onChangeOption(e.currentTarget.value)
+            onChangeOption && onChangeOption(+e.currentTarget.value)
+            // + приводит строку к число, так как input value - это строка или можно так
+            // onChangeOption && onChangeOption(Number(e.currentTarget.value))
+            // или так:
+            // onChangeOption && onChangeOption(JSON.parse(e.currentTarget.value))
         }
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
-    const mappedOptions: any[] = options
+    const mappedOptions: React.ReactElement[] = options
         ? options.map((o) => (
               <label key={name + '-' + o.id} className={s.label}>
                   <input
@@ -55,7 +63,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                       className={finalRadioClassName}
                       type={'radio'}
                       name={name}
-                      checked={o.id == value}
+                      checked={o.id === value}
                       value={o.id}
                       onChange={onChangeCallback}
                       {...restProps}
