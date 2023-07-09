@@ -55,6 +55,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
+    // React.ReactElement[] - так как есть jsx то типизация такая
+
     const mappedOptions: React.ReactElement[] = options
         ? options.map((o) => (
               <label key={name + '-' + o.id} className={s.label}>
